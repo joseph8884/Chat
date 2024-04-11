@@ -23,22 +23,35 @@
         android:hint="Email"
         android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"/>
-    <EditText
-        android:id="@+id/contraseña"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/contraseñacaja"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/edt_email"
-        android:layout_marginTop="20dp"
-        android:paddingLeft="13dp"
-        android:background="@drawable/edt_background"
-        android:hint="Password"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginTop="10dp"
+        app:endIconMode="password_toggle"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/contraseña"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/edt_email"
+            android:paddingLeft="13dp"
+
+            android:background="@drawable/edt_background"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:hint="Password"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:id="@+id/btn_login"
-        android:layout_below="@+id/contraseña"
+        android:layout_below="@+id/contraseñacaja"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:text="LogIn"

@@ -42,7 +42,7 @@ class DatosUsuario : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        supportActionBar?.title = "Datos de usuario"
         setContentView(R.layout.activity_datos_usuario)
         emailtextView=findViewById(R.id.emailtextView)
         providertextView=findViewById(R.id.providertextView)

@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 
 class LogIn : AppCompatActivity() {
     private lateinit var edt_email:EditText
-    private lateinit var edt_password:EditText
+    private lateinit var edt_password: TextInputEditText
     private lateinit var btn_login:Button
     private lateinit var btn_SignUp: Button
     private lateinit var mAuth: FirebaseAuth

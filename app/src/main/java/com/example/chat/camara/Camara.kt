@@ -25,6 +25,7 @@ class Camara : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.title = "Camara"
         setContentView(R.layout.activity_camara)
         botonOpenCamara = findViewById(R.id.open_camera)
         save_to_gallery = findViewById(R.id.save_to_gallery)

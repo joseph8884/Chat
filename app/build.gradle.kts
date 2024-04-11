@@ -60,4 +60,7 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     // google maps
     implementation ("com.google.android.gms:play-services-maps:17.0.0")
+    //Implementacion glide
+    implementation ("com.github.bumptech.glide:glide:4.13.2")
+
 }

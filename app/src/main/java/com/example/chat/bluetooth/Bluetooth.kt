@@ -25,6 +25,7 @@ class Bluetooth : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bluetooth)
+        supportActionBar?.title = "Bluetooth"
         btnOn = findViewById(R.id.btnOn)
         btnOff = findViewById(R.id.btnOff)
         btnPaired = findViewById(R.id.btnPair)

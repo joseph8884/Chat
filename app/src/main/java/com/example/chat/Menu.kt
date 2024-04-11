@@ -21,6 +21,7 @@ class Menu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
+        supportActionBar?.title = "Menu Principal"
         datosUsuarios = findViewById(R.id.datos_usuario)
         chat = findViewById(R.id.Chatear)
         maps = findViewById(R.id.maps)
