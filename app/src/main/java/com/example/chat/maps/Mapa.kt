@@ -26,6 +26,7 @@ class Mapa : AppCompatActivity(),OnMapReadyCallback,OnMyLocationButtonClickListe
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mapa)
+        supportActionBar?.title = "Mapa"
         createMapFragment()
     }
     private fun createMapFragment() {
