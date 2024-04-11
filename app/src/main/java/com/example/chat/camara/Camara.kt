@@ -53,9 +53,7 @@ class Camara : AppCompatActivity() {
     private val openCamera =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == RESULT_OK) {
-                val data = result.data!!
-// val bitmap = data.extras!!.get("data") as Bitmap
-//val bitmap = getBitmap()
+
                 val bitmap=BitmapFactory.decodeFile(file.toString())
                 imagen.setImageBitmap(bitmap)
             }

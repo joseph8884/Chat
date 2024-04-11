@@ -219,17 +219,18 @@
             android:clipChildren="false"
             android:contextClickable="true"
             android:gravity="center_horizontal"
+            android:background="#CDCBCB"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal"
-                android:text="Camara"
-                android:textColor="@color/black"
-                android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="Jose Guzman \n Ing. Informatica \n 2024-1 \n\n Profesor: \n Wilber Garcia \n\n Desarrollo movil \n\n Made it with love by JoseGuzman Webelopers"
+                    android:textColor="@color/black" />
 
 
         </LinearLayout>
