@@ -14,6 +14,7 @@ class SignUp : AppCompatActivity() {
     private lateinit var edt_name: EditText
     private lateinit var edt_email: EditText
     private lateinit var edt_password: EditText
+    private lateinit var edt_fotoperfil: EditText
     private lateinit var btn_SignUp: Button
     private lateinit var mAuth: FirebaseAuth
     private lateinit var mDbRef: DatabaseReference
@@ -26,20 +27,24 @@ class SignUp : AppCompatActivity() {
         edt_email = findViewById(R.id.edt_email)
         edt_password=findViewById(R.id.contraseña)
         btn_SignUp=findViewById(R.id.btn_register)
+        edt_fotoperfil=findViewById(R.id.edt_fotoperfil)
         btn_SignUp.setOnClickListener {
             val name = edt_name.text.toString()
             val email = edt_email.text.toString()
             val password =edt_password.text.toString()
-            singUp(name,email,password);
+            val foto_perfil=edt_fotoperfil.text.toString()
+            singUp(name,email,password,foto_perfil);
         }
     }
-    private fun singUp(name: String,email: String, password: String){
+    private fun singUp(name: String,email: String, password: String, foto_perfil: String){
 //logica para crear usuarios
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    addUserToDatabase(name,email,mAuth.currentUser?.uid!!)
-                    val intent = Intent(this@SignUp, MainActivity::class.java)
+                    addUserToDatabase(name,email,mAuth.currentUser?.uid!!,foto_perfil)
+                    val intent = Intent(this@SignUp, Menu::class.java).apply {
+                        putExtra("email", email)
+                    }
                     finish()
                     startActivity(intent)
                 } else {
@@ -51,8 +56,8 @@ class SignUp : AppCompatActivity() {
                 }
             }
     }
-    private fun addUserToDatabase (name: String,email: String, uid: String){
+    private fun addUserToDatabase (name: String,email: String, uid: String, foto_perfil: String){
         mDbRef = FirebaseDatabase.getInstance().getReference()
-        mDbRef.child("user").child(uid).setValue(User(name, email, uid))
+        mDbRef.child("user").child(uid).setValue(User(name, email, uid,foto_perfil ))
     }
 }
